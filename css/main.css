@@ -7,3 +7,17 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 /*estilos a la vista del logo*/
+.viewLogo {
+  background:linear-gradient(#6a2588, #d6047a);
+  height: 100vh;
+}
+.containerLogo {
+  padding-top: 30vh;
+}
+.logoFood {
+  display: block;
+  margin: auto;
+  width: 60vw;
+  height: 30vh;
+}
+/*estilos de vista principal*/
