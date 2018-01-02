@@ -1,107 +1,105 @@
 $(document).ready(function() {
+  $('#main-page').hide();
+  $('#signUp-page').hide();
+  $('#verify').hide();
+  $('#signUp-page2').hide();
+  $('#end').hide();
 
-$("#main-page").hide();
-$("#signUp-page").hide();
-$("#verify").hide();
-$("#signUp-page2").hide();
-$("#end").hide();
+  /* Reapareciendo pagina principal una vez el spash desaparezca */
 
+  $('#splash').fadeOut(3000, function() {
+    $('#splash').remove();
+    $('#main-page').fadeIn(1000);
+  });
 
-/*reapareciendo pagina principal una vez el spash desaparezca*/
-$('#splash').fadeOut(3000, function() {
-  $("#splash").remove();
-  $('#main-page').fadeIn(1000);
-});
+  /* reapareciendo sección sign up al clickear en el botón */
+  $('#sign-up').click(function() {
+    $('#main-page').hide();
+    $('#signUp-page').show();
 
-/*reapareciendo sección sign up al clickear en el botón*/
-$("#sign-up").click(function(){
-  $("#main-page").hide();
-  $("#signUp-page").show();
+    /* escondiendo codigos de paises */
+    $('#colombia').hide();
+    $('#peru').hide();
+    $('#mexico').hide();
+    $('#usa').hide();
+  });
 
-  /*escondiendo codigos de paises*/
-  $("#colombia").hide();
-  $("#peru").hide();
-  $("#mexico").hide();
-  $("#usa").hide();
-});
+  /*  devolviendo a la pagina principal */
+  $('#return-main').click(function() {
+    $('#signUp-page').hide();
+    $('#main-page').show();
+  });
 
-/*devolviendo a la pagina principal*/
-$("#return-main").click(function(){
-  $("#signUp-page").hide();
-  $("#main-page").show();
-});
+  /*  habilitando boton next de sign up */
+  $('#phone').keyup(function() {
+    if ($(this).val().length === 10) {
+      $('#next').removeAttr('disabled');
+      $('#next').removeClass('disabled');
+    } else {
+      $('#next').attr('disabled', 'disabled');
+    }
+  });
 
-/*habilitando boton next de sign up*/
-$("#phone").keyup(function () {
-  if($(this).val().length == 10) {
-    $("#next").removeAttr('disabled');
-    $("#next").removeClass("disabled");
-  } else {
-    $("#next").attr("disabled", "disabled");
-  }
-});
+  /* habilitando boton next de verify */
+  $('#lab').keyup(function() {
+    if ($(this).val().length === 3) {
+      $('#next-verify').removeAttr('disabled');
+      $('#next-verify').removeClass('disabled');
+    } else {
+      $('#next-verify').attr('disabled', 'disabled');
+    }
+  });
 
-/**habilitando boton next de verify*/
-$("#lab").keyup(function () {
-  if($(this).val().length == 3) {
-    $("#next-verify").removeAttr('disabled');
-    $("#next-verify").removeClass("disabled");
-  } else {
-    $("#next-verify").attr("disabled", "disabled");
-  }
-});
-
-
-/*reenviando el código con el botón resend*/
-$("#resend").click(function(){
-    var code = "";
-    var str = "123456789";
+  /*  reenviando el código con el botón resend  */
+  $('#resend').click(function() {
+    var code = '';
+    var str = '123456789';
     for (var i = 0; i < 3; i++) {
     	code += str.charAt(Math.floor(Math.random() * str.length));
     }
-    alert("Tu código: LAB-" + code);
-  $("#signUp-page").hide();
-  $("#verify").show();
-});
+    alert('Tu código: LAB-' + code);
+    $('#signUp-page').hide();
+    $('#verify').show();
+  });
 
-/*cuando clickee next va a alertar el codigo de verificacion*/
+  /*  cuando clickee next va a alertar el codigo de verificacion */
 
-$("#next").click(function(){
-    var code = "";
-    var str = "123456789";
+  $('#next').click(function() {
+    var code = '';
+    var str = '123456789';
     for (var i = 0; i < 3; i++) {
     	code += str.charAt(Math.floor(Math.random() * str.length));
     }
-    alert("Tu código: LAB-" + code);
-  $("#signUp-page").hide();
-  $("#verify").show();
+    alert('Tu código: LAB-' + code);
+    $('#signUp-page').hide();
+    $('#verify').show();
+  });
 
-});
+  /*  devolviendo a sign up */
 
-/*devolviendo a sign up*/
-$("#return-sign").click(function(){
-  $("#verify").hide();
-  $("#signUp-page").show();
-});
+  $('#return-sign').click(function() {
+    $('#verify').hide();
+    $('#signUp-page').show();
+  });
 
-/*cuando clickee en next de verify llevará a la sección signup 2*/
-$("#next-verify").click(function(){
-  $("#verify").hide();
-  $("#signUp-page2").show();
-});
+  /*  cuando clickee en next de verify llevará a la sección signup 2*/
+  $('#next-verify').click(function() {
+    $('#verify').hide();
+    $('#signUp-page2').show();
+  });
 
-/*cuando se cliquee el la flecha return volverá a la seccion verify*/
-$("#return-verify").click(function(){
-  $("#signUp-page2").hide();
-  $("#verify").show();
-});
+  /*  cuando se cliquee el la flecha return volverá a la seccion verify*/
+  $('#return-verify').click(function() {
+    $('#signUp-page2').hide();
+    $('#verify').show();
+  });
 
-/*si el checkbox está seleccionado el botón se actiivará*/
-  $("#test5").click(function() {
-    var checked_status = this.checked;
-    if (checked_status == true && $("#first_name").val() !== '' && $("#last_name").val() !== '' && $("#email").val() !== '' ) {
-       $("#next-sign2").removeAttr("disabled");
-         $("#next-sign2").removeClass("disabled");
+  /*  si el checkbox está seleccionado el botón se actiivará*/
+  $('#test5').click(function() {
+    var checkedStatus = this.checked;
+    if (checkedStatus === true && $('#first_name').val() !== '' && $('#last_name').val() !== '' && $('#email').val() !== '' ) {
+      $('#next-sign2').removeAttr('disabled');
+      $("#next-sign2").removeClass("disabled");
     } else {
        $("#next-sign2").attr("disabled", "disabled");
     }
@@ -171,6 +169,5 @@ $(".dropdown img.flag").addClass("flagvisibility");
       $("#peru").hide();
       $("#mexico").hide();
       $("#usa").show();
-    });
-
+  });
 });
