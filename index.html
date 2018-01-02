@@ -1,23 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lyft</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <title>Lyft</title>
   </head>
   <body>
-    <section class="viewLogo">
-      <div class="containerLogo">
-        <div class="logo">
-          <img class="logoFood"src="assets/img/logo-white.png" alt="logo-white">
+    <!--vista splash-->
+    <section class="container" id="splash">
+      <div class="row">
+        <img class="img-responsive col s8  offset-s2" id="logo-splash" src="assets/img/logo-white.png" alt="logo-white">
+      </div>
+    </section>
+    <!--vista principal-->
+    <section class="container" id="main-page">
+      <div class="row">
+        <img class="img-responsive col s4  offset-s4" src="assets/img/logo-white.png" alt="logo-whhite">
+      </div>
+      <div class="row">
+        <img class="img-responsive col s10  offset-s1" id="lyftlyfe" src="assets/img/lyftlyfe.png" alt="lyftlyfe">
+      </div>
+      <div class="row" id="btns-main">
+        <button class="col s4  offset-s2 btn-main" type="button" name="button">LOG IN</button>
+        <button class="col s4  btn-main" type="button" name="button" id="sign-up">SIGN UP</button>
+      </div>
+    </section>
+    <!--vista ingrese numero de telefono "singup"-->
+    <section class="container" id="signUp-page">
+      <div class="row mb-0" >
+        <i class="material-icons col s2" id="return-main">keyboard_arrow_left</i>
+        <div class="col-8" >
+          <div class="row">
+            <h5 class="col s7" id="title-sgn">Sign Up</h5>
+            <br>
+            <p class="col s7">Join now for free ride credit</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row mb-0">
+        <div class="input-field col s4 offset-s1">
+          <dl id="sample" class="dropdown flags">
+            <dt><a href="#"><span>Country</span></a></dt>
+            <dd>
+              <ul>
+                <li><a href="#" id="imgcol"><img class="flag" style="width:50px;" src="assets/img/colombia.png" alt="" /><span class="value"></span></a></li>
+                <li><a href="#" id="imgper"><img class="flag" style="width:50px;" src="assets/img/peru.png"><span class="value"></span></a></li>
+                <li><a href="#" id="imgmex"><img class="flag" style="width:50px;" src="assets/img/mexico.jpg"><span class="value"></span></a></li>
+                <li><a href="#" id="imgusa"><img class="flag" style="width:50px;" src="assets/img/usa.png"><span class="value"></span></a></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <div class="col s1" id="codes">
+          <p id="colombia">+57</p>
+          <p id="peru">+51</p>
+          <p id="mexico">+52</p>
+          <p id="usa">+001</p>
+        </div>
+        <div class="input-field col s5">
+          <input id="phone" type="tel" class="validate" placeholder="phone number">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col s8 offset-s2">
+          <p id="text">We'll send a text to verify your phone</p>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col s12">
+            <a class="btn disabled" id="next">Next</a>
+          </div>
+        </div>
+    </section>
+    <!--vista "verificacion de numero telefonico"-->
+    <section class="container" id="verify">
+      <div class="row mb-0" >
+        <i class="material-icons col s2" id="return-sign">keyboard_arrow_left</i>
+        <div class="col-8" >
+          <div class="row">
+            <h5 class="col s10 offset-s2">Verify phone number</h5>
+            <br>
+            <p class="col s7 offset-s2">Join now for free ride credit</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col s12 offset-s4">
+           LAB-
+          <div class="input-field inline">
+            <input class="col s2" id="lab" type="email" class="validate">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s8 offset-s2">
+          <p id="text">Enter the code sent to +52</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <a class="btn col s4 offset-s4" id="resend">resend</a>
+        </div>
+      </div>
+      <div class="row" id="row-verify">
+        <div class="col s12">
+          <a class="btn col s12 disabled" id="next-verify">Next</a>
         </div>
       </div>
     </section>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiibYKHhp0Rh-z1I3qPxABLXI7JFF3lco&callback=initMap" type="text/javascript"></script>
+    <!--vista de inscripcion "sing up"-->
+    <section class="container" id="signUp-page2">
+      <div class="row mb-0" >
+        <i class="material-icons col s2" id="return-verify">keyboard_arrow_left</i>
+        <div class="col-8" >
+          <div class="row">
+            <h5 class="col s7" id="title-sgn">Sing Up</h5>
+            <br>
+            <p class="col s7">Join now for free ride credit</p>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">person_outline</i>
+              <input id="first_name" type="text" class="validate" placeholder="name">
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate" placeholder="last name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" class="validate" placeholder="email">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <form action="#">
+          <p>
+           <input type="checkbox" id="test5" />
+           <label for="test5">I agree to Lyft's <a href="">Terms of service</a></label>
+          </p>
+        </form>
+      </div>
+      <div class="row" id="row-sign2">
+        <div class="col s12">
+          <a class="btn col s12 disabled" id="next-sign2">Next</a>
+        </div>
+      </div>
+    </section>
+    <!--vista final "VISTO BUENO"-->
+    <section class="container" id="end">
+      <div class="row">
+        <img class="img-responsive col s8  offset-s2" id="logo-end" src="assets/img/logo-white.png" alt="">
+      </div>
+      <div class="row">
+        <a href="" id="tick"><img class="img-responsive col s8  offset-s2"  src="assets/img/tick.png" alt=""></a>
+      </div>
+    </section>
+
     <script type="text/javascript" src="vendors/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
