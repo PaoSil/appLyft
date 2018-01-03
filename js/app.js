@@ -97,77 +97,76 @@ $(document).ready(function() {
   /*  si el checkbox está seleccionado el botón se actiivará*/
   $('#test5').click(function() {
     var checkedStatus = this.checked;
-    if (checkedStatus === true && $('#first_name').val() !== '' && $('#last_name').val() !== '' && $('#email').val() !== '' ) {
+    if (checkedStatus === true && $('#first_name').val() !== '' && $('#last_name').val() !== '' && $('#email').val() !== '') {
       $('#next-sign2').removeAttr('disabled');
-      $("#next-sign2").removeClass("disabled");
+      $('#next-sign2').removeClass('disabled');
     } else {
-       $("#next-sign2").attr("disabled", "disabled");
+      $('#next-sign2').attr('disabled', 'disabled');
     }
-});
+  });
 
-/*al clickear el boton next de sign-up2 lleva a la ultima seccion*/
-$("#next-sign2").click(function(){
-  $("#signUp-page2").hide();
-  $("#end").show();
-});
+  /*  al clickear el boton next de sign-up2 lleva a la ultima seccion*/
+  $('#next-sign2').click(function() {
+    $('#signUp-page2').hide();
+    $('#end').show();
+  });
 
-/*al clickear el tick te lleva a la main page*/
-$("#tick").click(function(){
-  $("#end").hide();
-  $("#main-page").show();
-});
+  /* al clickear el tick te lleva a la main page*/
+  $('#tick').click(function() {
+    $('#end').hide();
+    $('#main-page').show();
+  });
 
-/*dropdown banderas*/
-$(".dropdown img.flag").addClass("flagvisibility");
-    $(".dropdown dt a").click(function() {
-        $(".dropdown dd ul").toggle();
-    });
+  /* dropdown banderas*/
+  $('.dropdown img.flag').addClass('flagvisibility');
+  $('.dropdown dt a').click(function() {
+    $('.dropdown dd ul').toggle();
+  });
 
-    $(".dropdown dd ul li a").click(function() {
-        var text = $(this).html();
-        $(".dropdown dt a span").html(text);
-        $(".dropdown dd ul").hide();
-        $("#result").html("Selected value is: " + getSelectedValue("sample"));
-    });
+  $('.dropdown dd ul li a').click(function() {
+    var text = $(this).html();
+    $('.dropdown dt a span').html(text);
+    $('.dropdown dd ul').hide();
+    $('#result').html('Selected value is: ' + getSelectedValue('sample'));
+  });
 
-    function getSelectedValue(id) {
-        return $("#" + id).find("dt a span.value").html();
-    }
+  function getSelectedValue(id) {
+    return $('#' + id).find('dt a span.value').html();
+  }
 
-    $(document).bind('click', function(e) {
-        var $clicked = $(e.target);
-        if (! $clicked.parents().hasClass("dropdown"))
-            $(".dropdown dd ul").hide();
-    });
-    $(".dropdown img.flag").toggleClass("flagvisibility");
+  $(document).bind('click', function(event) {
+    var $clicked = $(event.target);
+    if (! $clicked.parents().hasClass('dropdown'))
+      $('.dropdown dd ul').hide();
+  });
+  $('.dropdown img.flag').toggleClass('flagvisibility');
 
+  /*  mostrando los códgos de cada país*/
+  $('#imgcol').click(function() {
+    $('#colombia').show();
+    $('#peru').hide();
+    $('#mexico').hide();
+    $('#usa').hide();
+  });
 
-/*mostrando los códgos de cada país*/
-    $("#imgcol").click(function(){
-      $("#colombia").show();
-      $("#peru").hide();
-      $("#mexico").hide();
-      $("#usa").hide();
-    });
+  $('#imgper').click(function() {
+    $('#colombia').hide();
+    $('#peru').show();
+    $('#mexico').hide();
+    $('#usa').hide();
+  });
 
-    $("#imgper").click(function(){
-      $("#colombia").hide();
-      $("#peru").show();
-      $("#mexico").hide();
-      $("#usa").hide();
-    });
+  $('#imgmex').click(function() {
+    $('#colombia').hide();
+    $('#peru').hide();
+    $('#mexico').show();
+    $('#usa').hide();
+  });
 
-    $("#imgmex").click(function(){
-      $("#colombia").hide();
-      $("#peru").hide();
-      $("#mexico").show();
-      $("#usa").hide();
-    });
-
-    $("#imgusa").click(function(){
-      $("#colombia").hide();
-      $("#peru").hide();
-      $("#mexico").hide();
-      $("#usa").show();
+  $('#imgusa').click(function() {
+    $('#colombia').hide();
+    $('#peru').hide();
+    $('#mexico').hide();
+    $('#usa').show();
   });
 });
