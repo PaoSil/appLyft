@@ -6,12 +6,17 @@
 body {
   font-family: 'Raleway', sans-serif;
 }
+/* estilos de la vista splash y visto bueno*/
 #splash, #end {
   background: linear-gradient(135deg,#1e5799,#530060,#c70881);
   background-attachment: fixed;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
+#logo-splash {
+  padding-top: 40vh;
+}
+/* estilos de la vista principal */
 #main-page{
   width: 100%;
   height: 100vh;
@@ -19,9 +24,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-#logo-splash {
-  padding-top: 50%;
-}
+
 #logo-end {
   padding-top: 40%;
 }
@@ -49,6 +52,9 @@ body {
 .flags {
   width: 1em;
   height: 1em;
+}
+.flag {
+  width: 50px;
 }
 #text {
   font-size: 0.8em;
