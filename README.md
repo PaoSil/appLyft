@@ -20,4 +20,4 @@ Con duracion de 2 a 5 segundos que redirecciona a tu vista de inicio. La vista d
 
 En la siguiente vista tenemos un formulario donde nuestro usuario puede escoger el país y debe ingresar su número de teléfono. El botón de NEXT debe estar deshabilitado hasta que se ingrese un número de 10 dígitos.
 
-![](https://github.com/PaoSil/appLyft/blob/master/assets/docs/vista-singUp(1).png)
+![](https://github.com/PaoSil/appLyft/blob/master/assets/docs/vista-singUp(1).png) ![](https://github.com/PaoSil/appLyft/blob/master/assets/docs/vista-singUp(2).png)
